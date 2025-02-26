@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunWith2DArrays", "FunWith2DArrays\FunWith2DArrays.csproj", "{495318CB-6F48-4B1C-9BC4-E4A54D165A08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{495318CB-6F48-4B1C-9BC4-E4A54D165A08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{495318CB-6F48-4B1C-9BC4-E4A54D165A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{495318CB-6F48-4B1C-9BC4-E4A54D165A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{495318CB-6F48-4B1C-9BC4-E4A54D165A08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
