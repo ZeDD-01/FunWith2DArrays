@@ -10,23 +10,23 @@ class Program
         Console.WriteLine("Enter the number of columns: ");
         int col = int.Parse(Console.ReadLine());
         
-        int[,] userDefinedArray = new int[row, col];
+        char[,] userDefinedArray = new char[row, col];
         
         Console.WriteLine("You can decide what should be contained in the array\n 1. the indices of the single array elements\n 2. Choose your own number");
         Console.WriteLine("Your choice = ");
         int userDefinedContent = int.Parse(Console.ReadLine());
 
         int counter = 1;
-        int arrayFiller = 0;
+        char arrayFiller = ' ';
         if (userDefinedContent == 2)
         {
             Console.WriteLine("Please choose the character the array should be filled with: ");
-            int userDefinedArrayContent = int.Parse(Console.ReadLine());
+            char userDefinedArrayContent = char.Parse(Console.ReadLine());
             arrayFiller = userDefinedArrayContent;
         }
         else
         {
-            arrayFiller = counter;
+            arrayFiller = (char)counter;
         }
         for (int rowIndex = 0; rowIndex < row; rowIndex++)
         {
