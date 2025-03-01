@@ -12,7 +12,7 @@ class Program
         
         char[,] userDefinedArray = new char[row, col];
         
-        Console.WriteLine("You can decide what should be contained in the array\n 1. the indices of the single array elements\n 2. Choose your own number");
+        Console.WriteLine("You can decide what should be contained in the array\n 1. the indices of the single array elements\n 2. Choose your own character");
         Console.WriteLine("Your choice = ");
         int userDefinedContent = int.Parse(Console.ReadLine());
 
@@ -30,12 +30,16 @@ class Program
         }
         for (int rowIndex = 0; rowIndex < row; rowIndex++)
         {
-            Console.Write("+---+\n");
+            for (int colIndex = 0; colIndex < col; colIndex++)
+            {
+                Console.Write("+---+");
+            }
+            Console.Write("\n");
             for (int colIndex = 0; colIndex < col; colIndex++)
             {
                 userDefinedArray[rowIndex, colIndex] = arrayFiller;
                 
-                Console.Write("  " + userDefinedArray[rowIndex, colIndex] + "  | ");
+                Console.Write("| " + userDefinedArray[rowIndex, colIndex] + " |");
                 counter++;
             }
             Console.Write("\n");
