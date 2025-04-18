@@ -36,53 +36,47 @@ namespace MyProject
 
             Console.WriteLine("\nYour generated array:\n");
 
-            for (int rowIndex = 0; rowIndex < row; rowIndex++)
+            for (int r = 0; r < row; r++)
             {
-                // Print horizontal border
-                for (int colIndex = 0; colIndex < col; colIndex++)
+                
+                if (useFrame)
                 {
-                    Console.Write("+----");
+                    for (int c = 0; c < col; c++)
+                        Console.Write("+----");
+                    Console.WriteLine("+");
                 }
-                Console.WriteLine("+");
 
-                // Fill and print cell contents
-                for (int colIndex = 0; colIndex < col; colIndex++)
+                
+                for (int c = 0; c < col; c++)
                 {
                     if (userDefinedContent == 1)
-                    {
-                        userDefinedArray[rowIndex, colIndex] = $"{rowIndex}{colIndex}";
-                    }
+                        userDefinedArray[r, c] = $"{r}{c}";
                     else
-                    {
-                        userDefinedArray[rowIndex, colIndex] = $"  {userDefinedChar}";
-                    }
+                        userDefinedArray[r, c] = $"  {userDefinedChar}";
+                }
 
-                    if (useFrame)
-                    {
-                        Console.Write($"| {userDefinedArray[rowIndex, colIndex],2} ");
-                    }
-                    else
-                    {
-                        Console.Write($"{userDefinedArray[rowIndex, colIndex]}");
-                    }
-
-                    if (useFrame)
-                    {
-                        Console.WriteLine("|");
-                    }
-                    else
-                    {
-                        Console.WriteLine();
-                    }
+                
+                if (useFrame)
+                {
+                    for (int c = 0; c < col; c++)
+                        Console.Write($"| {userDefinedArray[r, c],2} ");
+                    Console.WriteLine("|");
+                }
+                else
+                {
+                    for (int c = 0; c < col; c++)
+                        Console.Write($"{userDefinedArray[r, c]} ");
+                    Console.WriteLine();
                 }
             }
 
-            // Print bottom border
-            for (int colIndex = 0; colIndex < col; colIndex++)
+     
+            if (useFrame)
             {
-                Console.Write("+----");
+                for (int c = 0; c < col; c++)
+                    Console.Write("+----");
+                Console.WriteLine("+");
             }
-            Console.WriteLine("+");
         }
     }
 }
