@@ -14,6 +14,9 @@ namespace MyProject
 
             Console.Write("Enter the number of columns: ");
             int col = int.Parse(Console.ReadLine());
+            
+            Console.Write("\nDo you want a frame around each cell? (y/n): ");
+            bool useFrame = Console.ReadLine().ToLower() == "y";
 
             string[,] userDefinedArray = new string[row, col];
 
@@ -54,9 +57,24 @@ namespace MyProject
                         userDefinedArray[rowIndex, colIndex] = $"  {userDefinedChar}";
                     }
 
-                    Console.Write($"| {userDefinedArray[rowIndex, colIndex],2} ");
+                    if (useFrame)
+                    {
+                        Console.Write($"| {userDefinedArray[rowIndex, colIndex],2} ");
+                    }
+                    else
+                    {
+                        Console.Write($"{userDefinedArray[rowIndex, colIndex]}");
+                    }
+
+                    if (useFrame)
+                    {
+                        Console.WriteLine("|");
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                    }
                 }
-                Console.WriteLine("|");
             }
 
             // Print bottom border
