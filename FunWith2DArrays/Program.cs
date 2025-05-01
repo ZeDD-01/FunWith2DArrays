@@ -8,6 +8,7 @@ namespace MyProject
         {
             const int DRAW_ARRAY_ELEMENTS = 1;
             const int DRAW_CHOSEN_CHARACTER = 2;
+            const int DRAW_XO_PATTERN        = 3;
             
             Console.WriteLine("Hi, using this program you can create 2D-arrays");
             Console.WriteLine("Please enter the amount of columns and rows the array should have");
@@ -24,6 +25,7 @@ namespace MyProject
             Console.WriteLine("\nYou can decide what should be contained in the array:");
             Console.WriteLine("1. The indices of the array elements");
             Console.WriteLine("2. Choose your own character");
+            Console.WriteLine("3. Alternate x and o");
             Console.Write("Your choice = ");
             int userDefinedContent = int.Parse(Console.ReadLine());
 
@@ -42,10 +44,27 @@ namespace MyProject
             {
                 for (int c = 0; c < col; c++)
                 {
+                  
                     if (userDefinedContent == DRAW_ARRAY_ELEMENTS)
+                    {
                         userDefinedArray[r, c] = $"{r}{c}";
-                    else
+                    }
+                    else if (userDefinedContent == DRAW_CHOSEN_CHARACTER)
+                    {
                         userDefinedArray[r, c] = $"  {userDefinedChar}";
+                    }
+                    else if (userDefinedContent == DRAW_XO_PATTERN)
+                    {
+                        bool isX = (r + c) % 2 == 0;
+                        if (isX)
+                            userDefinedArray[r, c] = " x";
+                        else
+                            userDefinedArray[r, c] = " o";
+                    }
+                    else
+                    {
+                        userDefinedArray[r, c] = $"{r}{c}";
+                    }
                 }
             }
             
